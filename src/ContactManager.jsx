@@ -13,14 +13,12 @@ export default function ContactManager(props) {
     return initialArr || props.data;
   });
 
-
   //this function is passed to the 'AddPersonForm' component as the 'handleSubmit' prop
   //triggers a re-render with the updated list of contacts.
   function addPerson(name) {
     setContacts([...contacts, name]);
     console.log(...contacts, name);
   }
-
 
   //tihs function is passed to the 'PeopleList' component as the 'handleDelete' prop.
   //updates the 'contacts' state with the 'updatedData' after deletion
@@ -29,8 +27,7 @@ export default function ContactManager(props) {
     localStorage.setItem("arr", JSON.stringify(updatedData));
   }
 
-
-  //render two components AddPersonForm and PeopleList 
+  //render two components AddPersonForm and PeopleList
   return (
     <div>
       <AddPersonForm handleSubmit={addPerson} />
